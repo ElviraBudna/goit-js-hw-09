@@ -9,15 +9,23 @@ const ref = {
   minutesEl: document.querySelector('span[data-minutes]'),
   secondsEl: document.querySelector('span[data-seconds]'),
 };
-let userDate = null;
+// let userDate = null;
 
 const options = {
   enableTime: true,
   time_24hr: true,
   defaultDate: new Date(),
   minuteIncrement: 1,
-  onClose([selectedDates]) {
-    userDate = selectedDates;
+  onClose(selectedDates) {
+    // userDate = selectedDates;
+    const currentTime = Date.now();
+    //   console.log(currentTime);
+    if (selectedDates[0] - currentTime >= 0) {
+      ref.btnEl.disabled = true;
+    } else {
+      alert('Please choose a date in the future');
+      ref.btnEl.disabled = true;
+    }
   },
 };
 
