@@ -14,6 +14,7 @@ ref.btnEl.disabled = true;
 ref.btnEl.addEventListener('click', onClickBtn);
 
 let timerId = null;
+let selectedData = null;
 const options = {
   enableTime: true,
   time_24hr: true,
@@ -23,6 +24,7 @@ const options = {
     const currentTime = Date.now();
 
     if (selectedDates[0] - currentTime > 0) {
+      selectedData = selectedDates[0];
       ref.btnEl.disabled = false;
     } else {
       alert('Please choose a date in the future');
@@ -72,5 +74,8 @@ function addLeadingZero(value) {
 function startTimer(time) {
   const currentTime = Date.now();
   console.log(currentTime);
+  const timerTimeMs = selectedData - currentTime;
+  console.log(timerTimeMs);
+  console.log(convertMs(timerTimeMs));
 }
 // timerId = setInterval(startTimer, 1000);
