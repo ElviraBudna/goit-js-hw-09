@@ -21,7 +21,7 @@ const options = {
     const currentTime = Date.now();
     //   console.log(currentTime);
     if (selectedDates[0] - currentTime >= 0) {
-      ref.btnEl.disabled = true;
+      ref.btnEl.disabled = false;
     } else {
       alert('Please choose a date in the future');
       ref.btnEl.disabled = true;
