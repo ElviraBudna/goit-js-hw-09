@@ -37,10 +37,10 @@ const options = {
 flatpickr('#datetime-picker', options);
 
 function onClickBtn(e) {
-  e.currentTarget;
   timerId = setInterval(startTimer, 1000);
   options.enableTime = false;
   ref.btnEl.disabled = true;
+  ref.inputEl.disabled = true;
 }
 
 function convertMs(ms) {
@@ -72,7 +72,7 @@ function addLeadingZero(value) {
 function startTimer(time) {
   const currentTime = Date.now();
   const timerTimeMs = selectedData - currentTime;
-  if (timerTimeMs === 0) {
+  if (timerTimeMs >= 0) {
     clearInterval(timerId);
     console.log(timerTimeMs);
   }
