@@ -73,7 +73,7 @@ function addLeadingZero(value) {
 
 function startTimer(time) {
   const currentTime = Date.now();
-  console.log(currentTime);
+  //   console.log(currentTime);
   const timerTimeMs = selectedData - currentTime;
   console.log(timerTimeMs);
   console.log(convertMs(timerTimeMs));
