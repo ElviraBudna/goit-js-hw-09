@@ -73,9 +73,12 @@ function startTimer(time) {
   const timerTimeMs = selectedData - currentTime;
   console.log(timerTimeMs);
   timerData = convertMs(timerTimeMs);
+  changeTimerTime(timerData);
 }
 
-ref.daysEl.textContent = addLeadingZero(timerData.day);
-ref.hoursEl.textContent = addLeadingZero(timerData.hours);
-ref.minutesEl.textContent = addLeadingZero(timerData.minutes);
-ref.secondsEl.textContent = addLeadingZero(timerData.seconds);
+function changeTimerTime(data) {
+  ref.daysEl.textContent = addLeadingZero(data.day);
+  ref.hoursEl.textContent = addLeadingZero(data.hours);
+  ref.minutesEl.textContent = addLeadingZero(data.minutes);
+  ref.secondsEl.textContent = addLeadingZero(data.seconds);
+}
