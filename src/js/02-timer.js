@@ -40,6 +40,7 @@ function onClickBtn(e) {
   e.currentTarget;
   timerId = setInterval(startTimer, 1000);
   options.enableTime = false;
+  ref.btnEl.disabled = true;
 }
 
 function convertMs(ms) {
