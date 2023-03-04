@@ -15,6 +15,8 @@ ref.btnEl.addEventListener('click', onClickBtn);
 
 let timerId = null;
 let selectedData = null;
+let timerData = null;
+
 const options = {
   enableTime: true,
   time_24hr: true,
@@ -65,17 +67,17 @@ function addLeadingZero(value) {
   return String(value).padStart(2, '0');
 }
 
-// const currentDate = Date.now();
-// console.log(currentDate);
-
-// const newDate = selectedDates.getTime();
-// console.log(newDate);
-
 function startTimer(time) {
   const currentTime = Date.now();
   //   console.log(currentTime);
   const timerTimeMs = selectedData - currentTime;
   console.log(timerTimeMs);
-  console.log(convertMs(timerTimeMs));
+  timerData = convertMs(timerTimeMs);
 }
-// timerId = setInterval(startTimer, 1000);
+
+function changeTimerTime(data) {
+  ref.daysEl.textContent = addLeadingZero(timerData.day);
+  ref.hoursEl.textContent = addLeadingZero(timerData.hours);
+  ref.minutesEl.textContent = addLeadingZero(timerData.minutes);
+  ref.secondsEl.textContent = addLeadingZero(timerData.seconds);
+}
