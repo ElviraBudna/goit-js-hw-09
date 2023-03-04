@@ -9,34 +9,32 @@ const ref = {
   minutesEl: document.querySelector('span[data-minutes]'),
   secondsEl: document.querySelector('span[data-seconds]'),
 };
-// let userDate = null;
+
 ref.btnEl.disabled = true;
+ref.btnEl.addEventListener('click', onClickBtn);
+
+let timerId = null;
 const options = {
   enableTime: true,
   time_24hr: true,
   defaultDate: new Date(),
   minuteIncrement: 1,
   onClose(selectedDates) {
-    // userDate = selectedDates;
     const currentTime = Date.now();
-    //   console.log(currentTime);
+
     if (selectedDates[0] - currentTime > 0) {
       ref.btnEl.disabled = false;
     } else {
       alert('Please choose a date in the future');
-      //   ref.btnEl.disabled = true;
     }
   },
 };
 
-// console.log(userDate);
-
 flatpickr('#datetime-picker', options);
-
-ref.btnEl.addEventListener('click', onClickBtn);
 
 function onClickBtn(e) {
   e.currentTarget;
+  timerId = setInterval(startTimer, 1000);
 }
 
 function convertMs(ms) {
@@ -65,16 +63,14 @@ function addLeadingZero(value) {
   return String(value).padStart(2, '0');
 }
 
-// onClose(selectedDates => {
-//   const currentTime = Date.now();
-//   console.log(currentTime);
-//   if (selectedDates[0] !== currentTime) {
-//     window.alert('Please choose a date in the future');
-//   }
-// });
-
-const currentDate = Date.now();
-console.log(currentDate);
+// const currentDate = Date.now();
+// console.log(currentDate);
 
 // const newDate = selectedDates.getTime();
 // console.log(newDate);
+
+function startTimer(time) {
+  const currentTime = Date.now();
+  console.log(currentTime);
+}
+// timerId = setInterval(startTimer, 1000);
