@@ -10,7 +10,7 @@ const ref = {
   secondsEl: document.querySelector('span[data-seconds]'),
 };
 // let userDate = null;
-
+ref.btnEl.disabled = true;
 const options = {
   enableTime: true,
   time_24hr: true,
@@ -20,11 +20,11 @@ const options = {
     // userDate = selectedDates;
     const currentTime = Date.now();
     //   console.log(currentTime);
-    if (selectedDates[0] - currentTime >= 0) {
+    if (selectedDates[0] - currentTime > 0) {
       ref.btnEl.disabled = false;
     } else {
       alert('Please choose a date in the future');
-      ref.btnEl.disabled = true;
+      //   ref.btnEl.disabled = true;
     }
   },
 };
