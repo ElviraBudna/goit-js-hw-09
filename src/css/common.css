@@ -35,5 +35,5 @@ img {
 }
 
 .label {
-  text-transform: capitalize;
+  text-transform: uppercase;
 }
