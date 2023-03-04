@@ -75,9 +75,7 @@ function startTimer(time) {
   timerData = convertMs(timerTimeMs);
 }
 
-function changeTimerTime(data) {
-  ref.daysEl.textContent = addLeadingZero(timerData.day);
-  ref.hoursEl.textContent = addLeadingZero(timerData.hours);
-  ref.minutesEl.textContent = addLeadingZero(timerData.minutes);
-  ref.secondsEl.textContent = addLeadingZero(timerData.seconds);
-}
+ref.daysEl.textContent = addLeadingZero(timerData.day);
+ref.hoursEl.textContent = addLeadingZero(timerData.hours);
+ref.minutesEl.textContent = addLeadingZero(timerData.minutes);
+ref.secondsEl.textContent = addLeadingZero(timerData.seconds);
