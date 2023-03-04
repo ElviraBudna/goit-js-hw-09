@@ -71,10 +71,12 @@ function addLeadingZero(value) {
 function startTimer(time) {
   const currentTime = Date.now();
   const timerTimeMs = selectedData - currentTime;
+  console.log(timerTimeMs);
   timerData = convertMs(timerTimeMs);
   changeTimerTime(timerData);
   if (timerTimeMs === 0) {
     clearInterval(timerId);
+    console.log(timerTimeMs);
   }
 }
 
