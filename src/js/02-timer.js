@@ -77,7 +77,7 @@ function startTimer(time) {
 }
 
 function changeTimerTime(data) {
-  ref.daysEl.textContent = addLeadingZero(data.day);
+  ref.daysEl.textContent = addLeadingZero(data.days);
   ref.hoursEl.textContent = addLeadingZero(data.hours);
   ref.minutesEl.textContent = addLeadingZero(data.minutes);
   ref.secondsEl.textContent = addLeadingZero(data.seconds);
