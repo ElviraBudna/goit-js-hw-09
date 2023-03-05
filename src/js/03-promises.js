@@ -6,7 +6,7 @@ let delay = Number(formData.delay.value);
 let step = Number(formData.step.value);
 let amount = Number(formData.amount.value);
 
-addEventListener.formData('submit', onBtnSubmit);
+formData.addEventListener('submit', onBtnSubmit);
 
 function onBtnSubmit(e) {
   e.preventDefault();
