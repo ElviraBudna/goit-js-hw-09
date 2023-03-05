@@ -7,8 +7,10 @@ let changeColorTimer = null;
 
 ref.btnStart.addEventListener('click', onClickStart);
 ref.btnStop.addEventListener('click', onClickStop);
+ref.btnStop.disabled = true;
 
 function onClickStart(e) {
+  ref.btnStop.disabled = false;
   e.currentTarget.disabled = true;
   changeColorTimer = setInterval(changeColorBody, 1000);
 }
@@ -16,6 +18,7 @@ function onClickStart(e) {
 function onClickStop(e) {
   if (ref.btnStart.disabled) {
     ref.btnStart.disabled = false;
+    ref.btnStop.disabled = true;
     clearTimeout(changeColorTimer);
   }
 }

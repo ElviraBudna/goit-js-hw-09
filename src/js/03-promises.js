@@ -29,6 +29,7 @@ function onSubmit(e) {
         );
       });
   }
+  document.querySelector('button').disabled = true;
 }
 
 function createPromise(position, delay, step) {
